@@ -106,7 +106,8 @@ DEMO_PAGE = """
 # ---------------------------------------------------------------
 WIDGET_JS = """
 (function () {
-    var BASE_URL = window.location.origin;
+var scriptTag = document.currentScript;
+    var BASE_URL = new URL(scriptTag.src).origin;
 
     var bubble = document.createElement('div');
     bubble.id = 'gm-chat-bubble';
